@@ -3,6 +3,8 @@ name: Docker Image CI for udagram-frontend
 on:
   push:
     branches: [ "master" ]
+  pull_request:
+    branches: [" master "]
 
 jobs:
 
