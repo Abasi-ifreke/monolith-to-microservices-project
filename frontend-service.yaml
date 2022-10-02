@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: udagram-frontend
+  name: udagram-frontend-1
   labels:
-    run: udagram-frontend
+    run: udagram-frontend-1
 spec:
   ports:
   - port: 8100
     protocol: TCP
   selector:
-    run: udagram-frontend
+    run: udagram-frontend-1
