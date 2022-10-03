@@ -65,3 +65,11 @@ spec:
               secretKeyRef:
                 name: udagram-db-env
                 key: POSTGRES_USERNAME
+        volumeMounts:
+          - name: udagram-aws
+            mountPath: "/root/.aws/"
+            readOnly: true
+      volumes:
+        - name: udagram-aws
+          configMap:
+            name: udagram-aws
