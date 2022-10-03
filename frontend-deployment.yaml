@@ -17,5 +17,10 @@ spec:
       containers:
       - name: frontend-1
         image: abasiifrekeuwem/udagram-frontend:v2
+        resources:
+          requests:
+            cpu: "200m"
+          limits:
+            cpu: "500m"
         ports:
         - containerPort: 80
