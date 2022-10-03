@@ -17,6 +17,11 @@ spec:
       containers:
       - name: backend-feed-1
         image: abasiifrekeuwem/udagram-api-feed:v2
+        resources:
+          requests:
+            cpu: "200m"
+          limits:
+            cpu: "500m"
         ports:
         - containerPort: 8080
         env:
@@ -65,3 +70,11 @@ spec:
               secretKeyRef:
                 name: udagram-db-env
                 key: POSTGRES_USERNAME
+        volumeMounts:
+          - name: udagram-aws
+            mountPath: "/root/.aws/"
+            readOnly: true
+      volumes:
+        - name: udagram-aws
+          configMap:
+            name: udagram-aws
